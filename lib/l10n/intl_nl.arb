@@ -1,0 +1,8 @@
+{
+  "@@locale": "nl",
+  "previousMonthTooltip": "Vorige maand",
+  "nextMonthTooltip": "Volgende maand",
+  "todayButton": "Vandaag",
+  "weekNumber": "W{week}",
+  "weekNumberLabel": "Week {week}"
+}

@@ -1,0 +1,8 @@
+{
+  "@@locale": "pt",
+  "previousMonthTooltip": "Mês anterior",
+  "nextMonthTooltip": "Próximo mês",
+  "todayButton": "Hoje",
+  "weekNumber": "S{week}",
+  "weekNumberLabel": "Semana {week}"
+}

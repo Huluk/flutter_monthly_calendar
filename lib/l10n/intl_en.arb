@@ -1,0 +1,29 @@
+{
+  "@@locale": "en",
+  "previousMonthTooltip": "Previous month",
+  "@previousMonthTooltip": {
+    "description": "Tooltip for the previous month navigation button"
+  },
+  "nextMonthTooltip": "Next month",
+  "@nextMonthTooltip": {
+    "description": "Tooltip for the next month navigation button"
+  },
+  "todayButton": "Today",
+  "@todayButton": {
+    "description": "Label for the button that navigates to the current month"
+  },
+  "weekNumber": "W{week}",
+  "@weekNumber": {
+    "description": "Formatted ISO week number label",
+    "placeholders": {
+      "week": { "type": "int" }
+    }
+  },
+  "weekNumberLabel": "Week {week}",
+  "@weekNumberLabel": {
+    "description": "Full week number label for accessibility",
+    "placeholders": {
+      "week": { "type": "int" }
+    }
+  }
+}

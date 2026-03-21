@@ -1,0 +1,26 @@
+name: monthly_calendar
+description: A customizable monthly calendar widget with swipe navigation and per-day formatting.
+homepage: https://github.com/Huluk/flutter_monthly_calendar
+repository: https://github.com/Huluk/flutter_monthly_calendar
+issue_tracker: https://github.com/Huluk/flutter_monthly_calendar/issues
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  collection: ^1.16.0
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: '>=3.0.0 < 7.0.0'
+
+flutter:
+  generate: true
