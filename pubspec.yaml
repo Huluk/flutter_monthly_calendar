@@ -3,6 +3,15 @@ description: A customizable monthly calendar widget with swipe navigation and pe
 homepage: https://github.com/Huluk/flutter_monthly_calendar
 repository: https://github.com/Huluk/flutter_monthly_calendar
 issue_tracker: https://github.com/Huluk/flutter_monthly_calendar/issues
+screenshots:
+  path: screenshots/example.gif
+  description: 'Day selection and navigation'
+topics:
+  - flutter
+  - widget
+  - ui
+  - picker
+  - calendar
 version: 0.1.0
 
 environment:

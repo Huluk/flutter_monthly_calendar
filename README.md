@@ -3,6 +3,11 @@
 A customizable monthly calendar widget for Flutter with swipe navigation,
 day cell customization, ISO week numbers, and built-in localization.
 
+> **Note:** This package is an early version and is not yet stable.
+> Comments, bug reports, and pull requests are welcome!
+
+![Day selection and navigation](screenshots/example.gif)
+
 ## Features
 
 - Monthly calendar view with animated swipe navigation
