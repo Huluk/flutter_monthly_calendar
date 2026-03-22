@@ -4,8 +4,8 @@ homepage: https://github.com/Huluk/flutter_monthly_calendar
 repository: https://github.com/Huluk/flutter_monthly_calendar
 issue_tracker: https://github.com/Huluk/flutter_monthly_calendar/issues
 screenshots:
-  path: screenshots/example.gif
-  description: 'Day selection and navigation'
+  - path: screenshots/example.gif
+    description: 'Day selection and navigation'
 topics:
   - flutter
   - widget
