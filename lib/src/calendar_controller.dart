@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'time_util.dart';
 
-/// Controller to programmatically control [CustomCalendarView].
+/// Controller to programmatically control [MonthlyCalendarView].
 ///
 /// Use a controller when you need to programmatically navigate
 /// the calendar (e.g., from an external "Today" button).
@@ -17,7 +17,7 @@ import 'time_util.dart';
 /// ```dart
 /// final controller = CalendarController();
 ///
-/// CustomCalendarView(
+/// MonthlyCalendarView(
 ///   controller: controller,
 ///   ...
 /// );

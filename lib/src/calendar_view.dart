@@ -27,7 +27,7 @@ enum CalendarSwipe {
 }
 
 /// A monthly calendar view with swipe navigation and customizable day cells.
-class CustomCalendarView extends StatefulWidget {
+class MonthlyCalendarView extends StatefulWidget {
   /// The reference date (today).
   final DateTime today;
 
@@ -93,7 +93,7 @@ class CustomCalendarView extends StatefulWidget {
   /// Optional controller for programmatic navigation.
   final CalendarController? controller;
 
-  CustomCalendarView({
+  MonthlyCalendarView({
     super.key,
     required this.today,
     DateTime? initialFocusDate,
@@ -118,10 +118,10 @@ class CustomCalendarView extends StatefulWidget {
             (initialFocusDate ?? today).isInRange(firstDate, lastDate));
 
   @override
-  State<CustomCalendarView> createState() => _CustomCalendarViewState();
+  State<MonthlyCalendarView> createState() => _MonthlyCalendarViewState();
 }
 
-class _CustomCalendarViewState extends State<CustomCalendarView> {
+class _MonthlyCalendarViewState extends State<MonthlyCalendarView> {
   late DateTime _currentMonth;
   late CalendarController? _controller;
 

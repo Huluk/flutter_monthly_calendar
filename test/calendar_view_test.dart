@@ -14,14 +14,14 @@ Widget _wrap(Widget child) => MaterialApp(
 
 void main() {
   testWidgets('renders initial month title', (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(today: _march2026)));
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(today: _march2026)));
     await tester.pumpAndSettle();
 
     expect(find.text('March 2026'), findsOneWidget);
   });
 
   testWidgets('next arrow advances to next month', (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(today: _march2026)));
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(today: _march2026)));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byIcon(Icons.chevron_right));
@@ -31,7 +31,7 @@ void main() {
   });
 
   testWidgets('prev arrow goes to previous month', (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(today: _march2026)));
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(today: _march2026)));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byIcon(Icons.chevron_left));
@@ -42,7 +42,7 @@ void main() {
 
   testWidgets('today button returns to initial month after navigating away',
       (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(today: _march2026)));
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(today: _march2026)));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byIcon(Icons.chevron_right));
@@ -57,7 +57,7 @@ void main() {
   testWidgets('onMonthChanged fires with correct month when navigating',
       (tester) async {
     DateTime? changed;
-    await tester.pumpWidget(_wrap(CustomCalendarView(
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(
       today: _march2026,
       onMonthChanged: (m) => changed = m,
     )));
@@ -72,7 +72,7 @@ void main() {
 
   testWidgets('onDayTapped fires with the tapped date', (tester) async {
     DateTime? tapped;
-    await tester.pumpWidget(_wrap(CustomCalendarView(
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(
       today: _march2026,
       onDayTapped: (d) => tapped = d,
     )));
@@ -90,7 +90,7 @@ void main() {
   testWidgets('showWeekNumbers displays W10 label for second row of March 2026',
       (tester) async {
     // Row 2 of March 2026 = Mar 2–8, which is ISO week 10.
-    await tester.pumpWidget(_wrap(CustomCalendarView(
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(
       today: _march2026,
       showWeekNumbers: true,
     )));
@@ -101,7 +101,7 @@ void main() {
 
   testWidgets('showOutOfMonthDays=false hides out-of-month cells.',
       (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(
       today: _march2026,
       showOutOfMonthDays: false,
     )));
@@ -112,7 +112,7 @@ void main() {
 
   testWidgets('showOutOfMonthDays=true renders out-of-month cells',
       (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(
       today: _march2026,
       showOutOfMonthDays: true,
     )));
@@ -126,7 +126,7 @@ void main() {
       (tester) async {
     // Feb 2026: row 6 = Mar 2–8 (all out-of-month). With the row hidden,
     // "2" only refers to Feb 2; Mar 2 is never rendered.
-    await tester.pumpWidget(_wrap(CustomCalendarView(
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(
       today: DateTime(2026, 2, 1),
       showOutOfMonthRows: false,
     )));
@@ -137,7 +137,7 @@ void main() {
 
   testWidgets('dayBuilder custom widget appears for the matching day',
       (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(
       today: _march2026,
       dayBuilder: (context, info) {
         if (info.date.day == 10 && info.date.month == 3) {
@@ -155,7 +155,7 @@ void main() {
 
   testWidgets('tapping the title opens the month/year picker dialog',
       (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(today: _march2026)));
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(today: _march2026)));
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('March 2026'));
@@ -167,7 +167,7 @@ void main() {
 
   testWidgets('selecting a month in the picker navigates the calendar',
       (tester) async {
-    await tester.pumpWidget(_wrap(CustomCalendarView(today: _march2026)));
+    await tester.pumpWidget(_wrap(MonthlyCalendarView(today: _march2026)));
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('March 2026'));
@@ -186,7 +186,7 @@ void main() {
 
     testWidgets('out-of-range day cannot be tapped', (tester) async {
       DateTime? tapped;
-      await tester.pumpWidget(_wrap(CustomCalendarView(
+      await tester.pumpWidget(_wrap(MonthlyCalendarView(
         today: _march2026,
         firstDate: firstDay,
         onDayTapped: (d) => tapped = d,
@@ -201,7 +201,7 @@ void main() {
 
     testWidgets('in-range day can be tapped', (tester) async {
       DateTime? tapped;
-      await tester.pumpWidget(_wrap(CustomCalendarView(
+      await tester.pumpWidget(_wrap(MonthlyCalendarView(
         today: _march2026,
         firstDate: firstDay,
         lastDate: lastDay,
@@ -217,7 +217,7 @@ void main() {
     testWidgets('prev arrow is blocked at firstDay month boundary',
         (tester) async {
       // firstDay is in March, so February is out of range.
-      await tester.pumpWidget(_wrap(CustomCalendarView(
+      await tester.pumpWidget(_wrap(MonthlyCalendarView(
         today: _march2026,
         firstDate: firstDay,
       )));
@@ -231,7 +231,7 @@ void main() {
     testWidgets('next arrow is blocked at lastDay month boundary',
         (tester) async {
       // lastDay is in March, so April is out of range.
-      await tester.pumpWidget(_wrap(CustomCalendarView(
+      await tester.pumpWidget(_wrap(MonthlyCalendarView(
         today: _march2026,
         lastDate: lastDay,
       )));
@@ -244,7 +244,7 @@ void main() {
 
     testWidgets('allowNavigationOutsideRange bypasses prev block',
         (tester) async {
-      await tester.pumpWidget(_wrap(CustomCalendarView(
+      await tester.pumpWidget(_wrap(MonthlyCalendarView(
         today: _march2026,
         firstDate: firstDay,
         allowNavigationOutsideRange: true,
@@ -259,7 +259,7 @@ void main() {
     testWidgets('dayBuilder receives isOutOfRange=true for out-of-range days',
         (tester) async {
       final outOfRangeDays = <int>[];
-      await tester.pumpWidget(_wrap(CustomCalendarView(
+      await tester.pumpWidget(_wrap(MonthlyCalendarView(
         today: _march2026,
         firstDate: firstDay,
         lastDate: lastDay,
@@ -278,7 +278,7 @@ void main() {
 
     testWidgets('picker disables out-of-range months', (tester) async {
       // Range covers only March 2026. Feb and Apr should be disabled.
-      await tester.pumpWidget(_wrap(CustomCalendarView(
+      await tester.pumpWidget(_wrap(MonthlyCalendarView(
         today: _march2026,
         firstDate: firstDay,
         lastDate: lastDay,

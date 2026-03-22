@@ -41,7 +41,7 @@ add only `CalendarLocalizations.delegate` to your existing list.
 ## Basic Usage
 
 ```dart
-CustomCalendarView(
+MonthlyCalendarView(
   today: DateTime.now(),
   selectedDate: _selectedDate,
   onDayTapped: (date) => setState(() => _selectedDate = date),
@@ -54,7 +54,7 @@ Use `dayBuilder` to annotate or restyle individual days.
 Return `null` to use the default rendering.
 
 ```dart
-CustomCalendarView(
+MonthlyCalendarView(
   today: DateTime.now(),
   dayBuilder: (context, info) {
     if (info.date.weekday == DateTime.saturday ||
@@ -92,7 +92,7 @@ CustomCalendarView(
 Pass a `CalendarStyle` to the `style` parameter.
 
 ```dart
-CustomCalendarView(
+MonthlyCalendarView(
   today: DateTime.now(),
   style: CalendarStyle(
     firstDayOfWeek: DateTime.sunday,

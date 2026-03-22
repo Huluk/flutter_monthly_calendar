@@ -36,10 +36,10 @@ class _CalendarDemoState extends State<CalendarDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Custom Calendar View')),
+      appBar: AppBar(title: const Text('Monthly Calendar View')),
       body: Column(
         children: [
-          CustomCalendarView(
+          MonthlyCalendarView(
             today: DateTime.now(),
             selectedDate: _selectedDate,
             firstDate: DateTime(2025, 3, 15),
