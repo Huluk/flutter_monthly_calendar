@@ -9,5 +9,8 @@ l10n:
 install:
 	flutter pub get
 
+publish:
+	dart pub publish
+
 test:
 	flutter test
