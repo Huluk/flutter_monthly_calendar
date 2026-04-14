@@ -123,24 +123,23 @@ class MonthlyCalendarView extends StatefulWidget {
 
 class _MonthlyCalendarViewState extends State<MonthlyCalendarView> {
   late DateTime _currentMonth;
-  late CalendarController? _controller;
+  late final CalendarController? _controller;
+
+  // Range limits normalized to midnight.
+  late final DateTime? _firstDate;
+  late final DateTime? _lastDate;
 
   CalendarController get _effectiveController =>
       widget.controller ?? _controller!;
 
   DateTime get _initialFocusDate => _effectiveController.initialFocusDate;
 
-  // Range limits normalized to midnight.
-  late final DateTime? _firstDate;
-  late final DateTime? _lastDate;
-
   @override
   void initState() {
     super.initState();
-    if (widget.controller == null) {
-      _controller =
-          CalendarController(initialFocusDate: widget.initialFocusDate);
-    }
+    _controller = widget.controller == null
+        ? CalendarController(initialFocusDate: widget.initialFocusDate)
+        : null;
     _currentMonth = _initialFocusDate.toUtcMonth();
     _firstDate = widget.firstDate?.toUtcDay();
     _lastDate = widget.lastDate?.toUtcDay();
